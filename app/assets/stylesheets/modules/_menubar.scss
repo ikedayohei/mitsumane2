@@ -1,0 +1,74 @@
+.menubar {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  margin-top: 3px;
+  &__home {
+  color: white;
+  width: 300px;
+  line-height: 80px;
+  font-size: 30px;
+  text-align: center;
+  background: #333;
+  margin-left: 3px;
+  margin-right: 3px;
+  &:hover {
+    background-color: rgba(102, 188, 228, 0.507);
+    color: black;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  }
+  &__mypage {
+  color:white;
+  width: 300px;
+  line-height: 80px;
+  font-size: 30px;
+  text-align: center;
+  background: #333;
+  margin-right: 3px;
+  &:hover {
+    background-color: rgba(102, 188, 228, 0.507);
+    color: black;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  }
+  &__estimate{
+  color:white;
+  width: 300px;
+  line-height: 80px;
+  font-size: 30px;
+  text-align: center;
+  background: #333;
+  margin-right: 3px;
+  &:hover {
+    background-color: rgba(102, 188, 228, 0.507);
+    color: black;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  }
+  &__search{
+    color:white;
+    width: 300px;
+    line-height: 80px;
+    font-size: 30px;
+    text-align: center;
+    background: #333;
+    &:hover {
+      background-color: rgba(102, 188, 228, 0.507);
+      color: black;
+    }
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

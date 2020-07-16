@@ -1,0 +1,52 @@
+.new-estimate{
+  width: 1500px;
+  height: 600px;
+  display: flex;
+  &__left {
+  width: 300px;
+   &__box{
+    width: 250px;
+    height: 300px;
+    background: rgb(245, 245, 245);
+    margin-left: 20px;
+    border: solid 1px black;
+    border-radius: 3px;
+    padding-left: 30px;
+    font-size: 18px;
+    margin-top: 30px;
+    &__estimate{
+    margin-top: 10px;
+    }
+    &__sell{
+    margin-top: 10px;
+    }
+    &__profit{
+    margin-top: 10px;
+    }
+   }
+  }
+  &__right {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  &__box-1{
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 20px;
+    &__container {
+      display: flex;
+      margin-bottom: 5px;
+      &__show {
+      margin-left: 5px;
+      }
+      &__edit {
+      margin-left: 5px;
+      }
+      &__delete {
+        margin-left: 5px;
+      } 
+    }
+  }
+}

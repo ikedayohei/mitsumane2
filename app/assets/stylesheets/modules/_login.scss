@@ -1,0 +1,39 @@
+.login-main {
+  height: 100vh;
+  width: 100%;
+  &__title {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  &__box{
+    width: 500px;
+    height: 480px;
+    border: 2px solid black;
+    margin: 0 auto;
+    margin-top: 20px;
+    &__field{
+     margin-left: 100px;
+      &__label {
+      height: 30px;
+      margin-bottom: 15px;
+      margin-top: 15px;
+      }
+      &__contanir {
+      height: 30px;
+      width: 300px;
+      margin-bottom: 8px;
+      margin-top: 8px;
+      }
+      &__submit {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 30px;
+      width: 100px;
+      }
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+}

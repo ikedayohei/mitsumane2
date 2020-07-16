@@ -1,0 +1,255 @@
+.search-main{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  &__left{
+   width: 400px;
+   height: 100%;
+   &__search_sort{
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    &__box {
+      width: 200px;
+      height: 40px;
+      background-color: white;
+      text-align: center;
+    }
+  }
+  &__search_form {
+    border: solid 1px;
+    height: 750px;
+    width:350px;
+    margin-top: 30px;
+    background: rgb(245, 245, 245);
+    margin-left: 30px;
+    &__title {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+    &__name-title {
+    font-size: 15px;
+    padding-left: 50px;
+    margin-bottom: 3px;
+    }
+    &__name {
+    font-size: 15px;
+    padding-left: 50px;
+    }
+    &__name_box{
+      width: 200px;
+      height: 40px;
+      background-color:white;
+      text-align: center;
+      margin-left: 50px;
+      border-radius: 3px;
+      border: solid 1px;
+    }
+    &__figure_number-title {
+      font-size: 15px;
+      padding-left: 50px;
+      margin-bottom: 3px;
+      }
+      &__figure_number {
+      font-size: 15px;
+      padding-left: 50px;
+      }
+      &__figure_number_box{
+        width: 200px;
+        height: 40px;
+        background-color:white;
+        text-align: center;
+        margin-left: 50px;
+        border-radius: 3px;
+        border: solid 1px;
+    }
+    &__customer-title {
+      font-size: 15px;
+      padding-left: 50px;
+      margin-bottom: 3px;
+      }
+      &__customer {
+      font-size: 15px;
+      padding-left: 50px;
+      }
+      &__customer_box{
+        width: 200px;
+        height: 40px;
+        background-color:white;
+        text-align: center;
+        margin-left: 50px;
+        border-radius: 3px;
+        border: solid 1px;
+    }
+    &__make-title {
+      font-size: 15px;
+      padding-left: 50px;
+      margin-bottom: 3px;
+      }
+      &__make {
+      font-size: 15px;
+      padding-left: 50px;
+      }
+      &__make_box{
+        width: 200px;
+        height: 40px;
+        background-color:white;
+        text-align: center;
+        margin-left: 50px;
+        border-radius: 3px;
+        border:
+         solid 1px;
+      }
+      &__metal-title {
+        font-size: 15px;
+        padding-left: 50px;
+        margin-bottom: 3px;
+        }
+        &__metal {
+        font-size: 15px;
+        padding-left: 50px;
+        }
+        &__metal_box{
+          width: 200px;
+          height: 40px;
+          background-color:white;
+          text-align: center;
+          margin-left: 50px;
+          border-radius: 3px;
+          border:
+           solid 1px;
+    }
+    &__use-title {
+      font-size: 15px;
+      padding-left: 50px;
+      margin-bottom: 3px;
+      }
+      &__use {
+      font-size: 15px;
+      padding-left: 50px;
+      }
+      &__use_box{
+        width: 200px;
+        height: 40px;
+        background-color:white;
+        text-align: center;
+        margin-left: 50px;
+        border-radius: 3px;
+        border:
+         solid 1px;
+    }
+    &__price-title {
+    font-size: 15px;
+    padding-left: 50px;
+    margin-bottom: 3px;
+    }
+    &__price-box{
+      display: flex;
+      &__box1 {
+      width: 95px;
+      height: 40px;
+      background-color:white;
+      text-align: center;
+      margin-left: 50px;
+      border-radius: 5px;
+      border: solid 1px;
+      }
+      &__box2 {
+      width: 95px;
+      height: 40px;
+      background-color:white;
+      text-align: center;
+      border-radius: 5px;
+      border: solid 1px;
+      }
+      &__box3{
+      height: 40px;
+      line-height: 40px;
+      padding-bottom: 10px;
+      }
+    }
+    &__status-title {
+      font-size: 15px;
+      padding-left: 50px;
+      margin-bottom: 3px;
+      }
+      &__status {
+      font-size: 15px;
+      padding-left: 50px;
+      }
+      &__status_box{
+        width: 200px;
+        height: 40px;
+        background-color:white;
+        text-align: center;
+        margin-left: 50px;
+        border-radius: 3px;
+        border: solid 1px;
+    }
+    &__probability-title {
+      font-size: 15px;
+      padding-left: 50px;
+      margin-bottom: 3px;
+      }
+      &__probability {
+      font-size: 15px;
+      padding-left: 50px;
+      }
+      &__probability_box{
+        width: 200px;
+        height: 40px;
+        background-color:white;
+        text-align: center;
+        margin-left: 50px;
+        border-radius: 3px;
+        border: solid 1px;
+    }
+    &__btn-box{
+      display: flex;
+      &__box {
+      margin-top: 15px;
+      margin-left: 50px;
+      font-size: 15px;
+      height: 30px;
+      width: 100px;
+      background-color: #3CCACE;
+      text-align: center;
+      line-height: 30px;
+      border: solid 1px;
+      border-radius: 5px;
+      position: relative;
+      a{
+        text-decoration: none;
+        color:black;
+      }
+     }
+     &__submit {
+      margin-top: 15px;
+      margin-left: 10px;
+      font-size: 15px;
+      height: 30px;
+      width: 100px;
+      background-color: rgb(248, 10, 42);
+      text-align: center;
+      line-height: 30px;
+      border: solid 1px;
+      border-radius: 5px;
+      cursor: pointer;
+      }
+    }
+  }
+ }
+ &__right {
+  height: 100vh;
+  width: 100%;
+  margin-left: 20px;
+  &__title {
+    height: 20px;
+    width: 100%;
+    font-size: 18px;
+  }
+ }
+    
+}

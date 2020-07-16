@@ -1,0 +1,15 @@
+.show-estimate{
+  width: 600px;
+  height: 40px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30px;
+  margin-top: 3px;
+  &__show-box{
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: rgb(245, 241, 235);
+  }
+}

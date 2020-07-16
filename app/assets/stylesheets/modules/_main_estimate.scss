@@ -1,0 +1,74 @@
+.main_estimate{
+  margin-top: 3px;
+  height: 400px;
+  &__container-1{
+  width: 300px;
+  height: 400px;
+  display: inline-block;
+  &__get-label {
+    font-size: 20px;
+    margin-left: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color:#3CCACE;
+  }
+  &__get-need-label{
+  font-size: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 2px;
+  background-color: rgba(241, 119, 155, 0.781);
+  }
+  &__get-free-label{
+    font-size: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-left: 2px;
+    background-color: rgb(230, 221, 221);
+  }
+  &__get-container{
+  border: 1px solid;
+  border-radius: 5px;
+  height: 35px;
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 250px;
+  display: flex;
+  margin-bottom: 10px;
+  }
+  &__sumbit{
+    border: 1px solid;
+    border-radius: 5px;
+    height: 35px;
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 68px;
+    display: flex;
+    margin-bottom: 10px;
+    background-color: rgb(230, 221, 221);
+    &:hover {
+      background-color: rgba(102, 188, 228, 0.507);
+      color: black;
+    }
+  }
+ } 
+  &__container-2{
+  width: 300px;
+  height: 400px;
+  display: inline-block;
+  }
+  &__container-3{
+  width: 300px;
+  height: 400px;
+  display: inline-block;
+  }
+  &__container-4{
+  width: 300px;
+  height: 400px;
+  display: inline-block;
+  }
+  .field_with_errors {
+    background-color: #fcc;
+    padding: 2px;
+  }
+}
