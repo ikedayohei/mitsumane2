@@ -1,0 +1,5 @@
+=render "header"
+=render "menubar"
+.main_estimate
+  =form_with(model: @estimate, local: true ) do |f|
+    =render partial: "estimate_form", locals:{f: f}

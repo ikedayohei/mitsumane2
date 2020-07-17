@@ -1,0 +1,79 @@
+= render "header"
+= render "menubar"
+.show-estimate
+  見積り詳細
+%table.show-estimate__show-box{:border => "2"}
+  %tr
+    %th{:width => "270"} 品名
+    %th{:width => "600"}
+      =@estimate.name
+  %tr
+    %th 図番  
+    %th
+      =@estimate.figure_number
+  %tr
+    %th 入手日
+    %th
+      =@estimate.get.strftime("%Y-%m-%d")
+  %tr
+    %th 期限
+    %th
+      =@estimate.deadline.strftime("%Y-%m-%d")
+  %tr
+    %th 見積状況
+    %th
+      =@estimate.status.name
+  %tr
+    %th 受注確率
+    %th
+      =@estimate.probability.name
+  %tr
+    %th 客先
+    %th
+      =@estimate.customer
+  %tr
+    %th 工法
+    %th
+      =@estimate.make
+  %tr
+    %th 材質
+    %th
+      =@estimate.metal
+  %tr
+    %th SOP
+    %th
+      -if @estimate.start.present?
+        =@estimate.start.strftime("%Y-%m-%d")
+      -else
+  %tr
+    %th 使用用途
+    %th
+      =@estimate.use
+  %tr
+    %th 数量/月
+    %th
+      =@estimate.quantity
+  %tr
+    %th 売り単価
+    %th
+      =converting_to_jpy(@estimate.sell_price)
+  %tr
+    %th 仕入れ単価
+    %th
+      =converting_to_jpy(@estimate.purchase_price)
+  %tr
+    %th 利益
+    %th
+      =converting_to_jpy(@estimate.profit)
+  %tr
+    %th 売上合計
+    %th
+      =converting_to_jpy(@estimate.sell_price_total)
+  %tr
+    %th 利益合計
+    %th
+      =converting_to_jpy(@estimate.profit_total)
+  %tr
+    %th 備考
+    %th
+      =@estimate.remark

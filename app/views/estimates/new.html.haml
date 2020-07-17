@@ -1,0 +1,26 @@
+= render "header"
+= render "menubar"
+= paginate(@estimates)
+.new-estimate
+  .new-estimate__left
+    .new-estimate__left__box
+      .new-estimate__left__box__estimate
+        見積り件数
+        %br/
+        ="#{@numbers}件"
+      .new-estimate__left__box__sell
+        売上合計
+        %br/
+        = converting_to_jpy(@sell_price_totals)
+      .new-estimate__left__box__profit
+        売上合計
+        %br/
+        = converting_to_jpy(@profit_totals)
+
+  .new-estimate__right
+    -@estimates.each do |estimate|
+      .new-estimate__box-1
+        =render partial: "estimate_new", locals:{estimate: estimate}
+        .new-estimate__box1__negotiation
+          = render partial: "estimate_box", locals:{estimate: estimate}
+      
