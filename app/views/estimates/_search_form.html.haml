@@ -1,0 +1,48 @@
+.search-main__left
+  =search_form_for(@q, url: search_estimates_path) do |f|
+    .search-main__left__search_sort
+      =f.select( :sorts, { '並び替え': 'id desc', "数量の少ない順": "quantity desc","数量の多い順": "quantity asc","単価の安い順": "sell_price asc", "単価の高い順": "sell_price desc", "利益の低い順": "profit desc","利益の多い順": "profit desc","締め切り順": "deadline asc", "入手順": "get desc", "SOPの早い順": "start desc"}, {onchandge: "this.form.submit()"},class: "search-main__left__search_sort__box")
+    .search-main__left__search_form
+      .search-main__left__search_form__title
+        詳細検索
+      .search-main__left__search_form__name-title
+        商品名で検索
+      .search-main__left__search_form__name
+      =f.search_field :name_cont, placeholder: "商品名", class:"search-main__left__search_form__name_box"
+      .search-main__left__search_form__figure_number-title
+        図番で検索
+      .search-main__left__search_form__figure_number
+      =f.search_field :figure_number_cont, placeholder: "図番", class:"search-main__left__search_form__figure_number_box"
+      .search-main__left__search_form__customer-title
+        客先名
+      .search-main__left__search_form__customer
+      =f.search_field :customer_cont, placeholder: "客先名", class:"search-main__left__search_form__customer_box"
+      .search-main__left__search_form__make-title
+        工法
+      .search-main__left__search_form__make
+      =f.search_field :make_cont, placeholder: "工法", class:"search-main__left__search_form__make_box"
+      .search-main__left__search_form__metal-title
+        材質
+      .search-main__left__search_form__metal
+      =f.search_field :metal_cont, placeholder: "材質", class:"search-main__left__search_form__metal_box"
+      .search-main__left__search_form__use-title
+        使用用途
+      .search-main__left__search_form__use
+      =f.search_field :use_cont, placeholder: "使用用途", class:"search-main__left__search_form__use_box"
+      .search-main__left__search_form__price-title
+        売上単価
+      .search-main__left__search_form__price-box
+        =f.search_field :sell_price_gteq, placeholder: "￥ Min",class:"search-main__left__search_form__price-box__box1"
+        %span{class:'search-main__left__search_form__price-box__box3'} 〜
+        =f.search_field :sell_price_lteq, placeholder: "￥ Max",class:"search-main__left__search_form__price-box__box2"
+      .search-main__left__search_form__status-title
+        見積りの状況
+      .search-main__left__search_form__status
+      = f.collection_select :status_id_eq, Status.all, :id, :name, {prompt: "選択してください"},class:"search-main__left__search_form__status_box"
+      .search-main__left__search_form__probability-title
+        受注確率
+      .search-main__left__search_form__probability
+      = f.collection_select :probability_id_eq, Probability.all, :id, :name, {prompt: "選択してください"},class:"search-main__left__search_form__probability_box"
+      .search-main__left__search_form__btn-box
+        =f.button "クリア", type: :reset, class:"search-main__left__search_form__btn-box__box"
+        =f.submit "完了", class:"search-main__left__search_form__btn-box__submit"
