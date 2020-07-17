@@ -1,0 +1,7 @@
+.new-estimate__box-1__container
+  =estimate.user.name
+  - if current_user_has?(estimate)
+    =link_to "編集", edit_estimate_path(estimate.id),class:"new-estimate__box-1__container__edit"
+    =link_to "削除", estimate_path(estimate.id), method: :delete,data: { confirm: "削除しますか？" },class:"new-estimate__box-1__container__delete"
+  - if user_signed_in?
+    =link_to "詳細", estimate_path(estimate.id),class:"new-estimate__box-1__container__show"
