@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "estimates#index"
   resources :estimates do
     collection do
