@@ -4,5 +4,5 @@
       = render 'layouts/error_messages', model: f.object
       = render partial: "estimate_form", locals: { f: f}
   - else
-    =form_with(model: @estimate, local: true ) do |f|
+    = form_for [@estimate] do |f|
       = render partial: "not-estimate_form", locals: { f: f}

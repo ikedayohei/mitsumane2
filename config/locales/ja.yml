@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      estimate: 見積り
+    attributes:
+      estimate:
+        name: 品名
+        customer: 客先
+        get: 入手日
+        deadline: 締切
+        figure_number: 図番
+        make: 工法
+        metal: 材質
+        quantity: 数量
+        sell_price: 売り単価
+        purchase_price: 仕入れ単価
+        profit: 利益
+        sell_price_total: 売上合計
+        profit_total: 利益合計
+        probability_id: 受注確率
+        status_id: 見積り状況
