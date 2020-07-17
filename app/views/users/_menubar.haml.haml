@@ -1,0 +1,7 @@
+.menubar
+ .menubar__home
+  =link_to "HOME", root_path
+ .menubar__mypage
+  =link_to "ログアウト", destroy_user_session_path, method: :delete
+ .menubar__estimate
+  =link_to "Update", edit_user_path(current_user)

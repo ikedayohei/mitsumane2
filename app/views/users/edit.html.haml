@@ -1,0 +1,23 @@
+=render "estimates/header"
+=render "estimates/menubar"
+.login-main
+  .login-main__title
+    アカウント編集
+  .login-main__box
+    = form_for(current_user) do |f|
+      .login-main__box__field
+        = f.label :名前　,class: "login-main__box__field__label"
+        %br/
+        = f.text_field :name, autofocus: true,class: "login-main__box__field__contanir"
+      .login-main__box__field
+        = f.label :メールアドレス,　class: "login-main__box__field__label"
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email",class: "login-main__box__field__contanir"
+      .login-main__box__field
+        = f.label :会社名,class: "login-main__box__field__label"
+        %br/
+        = f.text_field :company_name, autofocus: true,class: "login-main__box__field__contanir"
+      .login-main__box__field
+        = f.submit "Update",class: "login-main__box__field__submit"
+      .login-main__box__field
+        =link_to "トップページに戻る", root_path

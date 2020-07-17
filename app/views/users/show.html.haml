@@ -1,0 +1,55 @@
+=render "estimates/header"
+=render "menubar"
+= paginate(@estimates)
+.show-mypage
+  .show-mypage__left
+    .show-mypage__left__box
+      .show-mypage__left__box__user
+        ユーザー
+        %br/
+        = current_user.name
+      .show-mypage__left__box__estimate
+        見積り件数
+        %br/
+        ="#{@number}件"
+      .show-mypage__left__box__sell-price
+        売上合計
+        %br/ 
+        = converting_to_jpy(@sell_price_total)
+      .show-mypage__left__box__profit
+        利益合計
+        %br/ 
+        = converting_to_jpy(@profit_total)
+
+  .show-mypage__right
+    -@estimates.each do |estimate|
+      - if current_user_has?(estimate)
+        .show-mypage__box
+          .show-mypage__box__container1
+            =render partial: "estimates/estimate_new", locals:{estimate: estimate}
+          .show-mypage__box__container2
+            %table.estimate-user-box{:border => "2"}
+              %tr
+                %th{:width => "170"} 品名
+                %th{:width => "300"}
+                  =estimate.name
+              %tr
+                %th 図番  
+                %th
+                  =estimate.figure_number
+              %tr
+                %th 入手日
+                %th
+                  =estimate.get.strftime("%Y-%m-%d")
+              %tr
+                %th 期限
+                %th
+                  =estimate.deadline.strftime("%Y-%m-%d")
+              %tr
+                %th 見積状況
+                %th
+                  =estimate.status.name
+              %tr
+                %th 受注確率
+                %th
+                  =estimate.probability.name
