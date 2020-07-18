@@ -1,6 +1,6 @@
 .main_estimate
   - if user_signed_in?
-    =form_with(model: @estimate, local: true ) do |f|
+    =form_for [@estimate] do |f|
       = render 'layouts/error_messages', model: f.object
       = render partial: "estimate_form", locals: { f: f}
   - else
