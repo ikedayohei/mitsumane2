@@ -5,7 +5,12 @@
   .login-main__box
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .login-main__box__field
-        = f.label :メールアドレス, class: "login-main__box__field__label"
+        %p テストアカウント(メールアドレス) 
+        %p aaaaa@gmail.com
+        %p テストアカウント(パスワード) 
+        %p 12345678
+        %br/
+        = f.label :メールアドレス , class: "login-main__box__field__label"
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email" ,class: "login-main__box__field__contanir"
       
