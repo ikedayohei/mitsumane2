@@ -4,46 +4,42 @@
   "Mitsumane"
 
 # 概要
-  見積もりを登録して管理できるアプリ<br>
+  見積りを登録して管理できるアプリ<br>
   <主な内容><br>
-  見積もりの登録 — 削除・編集 <br>
-  見積もりの一覧 - 見積もり
+  見積りの登録 — 削除・編集 <br>
+  見積りの一覧 - 見積りの閲覧 売上・利益合計の確認
   検索機能 — 登録条件での検索<br>
-  マイページ（見積もりの合計金額の確認と見積もりの閲覧）<br>
+  マイページ（見積もりの売上・利益の合計金額の確認 見積りの閲覧）<br>
 
 # 本番環境
-  https://dailyreportss.herokuapp.com/
+  http://175.41.229.0/
   テストアカウント
   email: aaaaa@gmail.com
   passward: 12345678
 
 # 制作背景
   <問題><br>
-  現在の仕事(営業職)で、営業日報を報告することになっているが、担当と上司間でのやり取りとなっている<br>
+  現在の仕事(営業職)で、見積り管理が個人での管理となっている<br>
   <解決><br>
-  部署内で営業日報を共有し誰でも閲覧できるようにする<br>
+  部署内で見積りを共有し誰でも閲覧できるようにする<br>
 
 # 工夫したポイント
-  営業日報にコメント機能実装し部署内でコミニケーションを取れるようにした
+  検索機能を実装し探したい見積りを検索できるようした
 
 # 使用技術(開発環境)
-  ruby (2.6.3)<br>
+  ruby (2.5.1)<br>
   Rails (5.0.7.2)<br>
-  jquery-rails (4.3.5)<br>
+  jquery-rails (4.4.0)<br>
   MySQL (5.6.46)<br>
 
 # 課題や今後実装したい機能
-  マイページに閲覧履歴の追加<br>
-  検索に詳細検索を追加<br>
-  資料を投稿できるようにする<br>
+  締め切り期限の通知<br>
+  見積りの作成<br>
 
 # DEMO
-  ![c2e406f448ee959a4f9e750fad0264ec.png](c2e406f448ee959a4f9e750fad0264ec.png)
-  ![f47d1e3bb80b7bc27a109d35bc7c255.png](2f47d1e3bb80b7bc27a109d35bc7c255.png)
-  ![bb71bc89abec619088fcab626f06851c.png](bb71bc89abec619088fcab626f06851c.png)
-  ![6460c4eda176d55eb2bc763b7ff77d00.png](6460c4eda176d55eb2bc763b7ff77d00.png)
-  ![4cad09f82a28d16699bd7ec50aa82f39.png](4cad09f82a28d16699bd7ec50aa82f39.png)
-  
+  ![ff05775cd49754d7fc550ba9abdd857f.png](ff05775cd49754d7fc550ba9abdd857f.png)
+  ![b99310243957292d211f390598725fd0.png](b99310243957292d211f390598725fd0.png)
+  ![be235f9844d5c0a96ce479ea3d09c2db.png](be235f9844d5c0a96ce479ea3d09c2db.png)
   
 # DB設計
 ## usersテーブル
@@ -52,90 +48,46 @@
 |email|string|null: false|
 |password|string|null: false|
 |name|string|null: false|
+|company_name|string|
 ### Association Association
-- has_many :sns_credentials
-- has_many :reports, dependent: :destroy
-- has_many :bookmarks, dependent: :destroy
-- has_many :bookmark_reports, through: :bookmarks, source: :report
-- has_many :comments
-- has_many :likes, dependent: :destroy
-- has_many :sns_credentials
+- has_many :estimates
 
-## reportsテーブル
+## estimatesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|where|string|null: false|
-|reponder|string|null: false|
-|companion|string||
-|date|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :commnets
-- has_many :comments
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|report_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :report
-- belongs_to :user
-
-## companyテーブル
-|Column|Type|Options|
-|------|----|-------|
+|customer|string|null: false|
+|get|datetime|null: false|
+|deadline|datetime|null: false|
 |name|string|null: false|
-|postcode|text|null: false|
-|phone_number|string|null: false|
-|capital|string|null: false|
-|sale|string|null: false|
-|description|string|null: false|
-|characteristic|text|
-|url|string|
+|figure_number|string|null: false|
+|make|string|null: false|
+|metal|string|null: false|
+|start|datetime|
+|use|string|
+|quantity|integer|null: false|
+|sell_price|integer|null: false|
+|purchase_price|integer|null: false|
+|profit|integer|null: false|
+|sell_price_total|integer|null: false|
+|profit_total|integer|null: false|
+|probability_id|integer|null: false|
+|status_id|integer|null: false|
+|remark|text|
 |user_id|integer|null: false, foreign_key: true|
-|report_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :companies
-- has_many :likes, dependent: :destroy
-- has_many :liked_users, through: :likes, source: :user
+- belongs_to_active_hash :probability
+- belongs_to_active_hash :status
 
-## likeテーブル
+## probabilitiesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|company_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-- belongs_to :company
+- activ-hach
 
-## bookmarksテーブル
+## statusesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|report_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :report
 
-## mapテーブル
-|Column|Type|Options|
-|------|----|-------|
-|address|string|
-|latitude|flot|
-|longitude|string|flot|
 ### Association
-- belongs to company
-
-## sns_credentialsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|provider|string|
-|uid|string|
-|user_id|integer|foreign_key: true|
-### Association
-- belongs_to :user,optional: true
+- activ-hach
