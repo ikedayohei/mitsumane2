@@ -53,7 +53,7 @@ class EstimatesController < ApplicationController
 
   private 
   def estimate_params
-    params.require(:estimate).permit(:customer,:get,:deadline,:name,:figure_number,:make,:metal,:start, :use, :quantity, :sell_price, :purchase_price, :profit, :sell_price_total, :profit_total, :remark, :probability_id, :status_id).merge(user_id: current_user.id)
+    params.require(:estimate).permit(:customer,:get,:deadline,:name,:figure_number,:make,:metal,:start, :use, :quantity, :sell_price, :purchase_price, :profit, :sell_price_total, :profit_total, :remark, :probability_id, :status_id, images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
   end
 
   def set_estimate
