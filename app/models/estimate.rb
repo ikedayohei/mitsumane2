@@ -1,6 +1,6 @@
 class Estimate < ApplicationRecord
   belongs_to :user
-
+  has_many :images,dependent: :destroy
   mount_uploader :image, ImageUploader
  
  extend ActiveHash::Associations::ActiveRecordExtensions

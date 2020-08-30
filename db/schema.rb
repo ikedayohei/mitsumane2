@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200717090511) do
+ActiveRecord::Schema.define(version: 20200830053733) do
 
   create_table "estimates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at",                     null: false
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20200717090511) do
     t.integer  "probability_id",                 null: false
     t.integer  "status_id",                      null: false
     t.index ["user_id"], name: "index_estimates_on_user_id", using: :btree
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "estimate_id"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["estimate_id"], name: "index_images_on_estimate_id", using: :btree
   end
 
   create_table "probabilities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,4 +71,5 @@ ActiveRecord::Schema.define(version: 20200717090511) do
   end
 
   add_foreign_key "estimates", "users"
+  add_foreign_key "images", "estimates"
 end
