@@ -40,6 +40,17 @@
     text-decoration: none;
     color: white;
   }
+  &__login{
+  color: white;
+  width: 300px;
+  line-height: 80px;
+  font-size: 30px;
+  text-align: center;
+  background: #333;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 5px;
+  }
   }
   &__estimate{
   color:white;
