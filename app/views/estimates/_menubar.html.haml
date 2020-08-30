@@ -4,11 +4,14 @@
  .menubar__mypage
   - if user_signed_in?
    =link_to "マイページ", user_path(current_user)
+   .menubar__estimate
+    =link_to "見積り一覧", new_estimate_path
+   .menubar__search
+    =link_to "検索", search_estimates_path
   - else 
+  .menubar__mypage__new
    =link_to "新規登録", new_user_registration_path
+  .menubar__mypage__login
    =link_to "ログイン", new_user_session_path
 
- .menubar__estimate
-  =link_to "見積り一覧", new_estimate_path
- .menubar__search
-  =link_to "検索", search_estimates_path
+ 
