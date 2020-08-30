@@ -47,7 +47,9 @@
   =f.label :必須 ,class:"main_estimate__container-1__get-need-label"
   =f.text_field :profit_total, id:"profit_total" ,class:"main_estimate__container-1__get-container"
 .main_estimate__container-4
-  =f.label
+  =f.label :資料 ,class:"main_estimate__container-1__get-label"
+  =f.label :任意 ,class:"main_estimate__container-1__get-free-label"
+  
   = f.fields_for :images do |i|
     = i.file_field :image,class:"main_estimate__container-1__get-container"
   =f.label :受注確率 ,class:"main_estimate__container-1__get-label"
