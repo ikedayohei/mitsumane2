@@ -72,6 +72,8 @@ gem 'rails-i18n'
 gem 'rspec-rails'
 gem 'kaminari'
 gem "ransack"
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 
