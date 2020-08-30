@@ -32,6 +32,7 @@
   background: #333;
   margin-right: 3px;
   border-radius: 5px;
+  position: relative;
   &:hover {
     background-color: rgba(102, 188, 228, 0.507);
     color: black;
@@ -40,16 +41,44 @@
     text-decoration: none;
     color: white;
   }
-  &__login{
-  color: white;
-  width: 300px;
-  line-height: 80px;
-  font-size: 30px;
-  text-align: center;
-  background: #333;
-  margin-left: 3px;
-  margin-right: 3px;
-  border-radius: 5px;
+    &__new {
+      color:white;
+      width: 300px;
+      line-height: 80px;
+      font-size: 30px;
+      text-align: center;
+      background: #333;
+      margin-right: 3px;
+      border-radius: 5px;
+      position: relative;
+      &:hover {
+        background-color: rgba(102, 188, 228, 0.507);
+        color: black;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    &__login{
+    color: white;
+    width: 300px;
+    line-height: 80px;
+    font-size: 30px;
+    text-align: center;
+    background: #333;
+    position: absolute;
+    border-radius: 5px;
+    top :0px;
+    left: 303px;
+    &:hover {
+      background-color: rgba(102, 188, 228, 0.507);
+      color: black;
+    }
+    a{
+      text-decoration: none;
+      color: white;
+    }
   }
   }
   &__estimate{
