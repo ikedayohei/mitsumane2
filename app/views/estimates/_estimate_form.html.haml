@@ -49,9 +49,15 @@
 .main_estimate__container-4
   =f.label :資料 ,class:"main_estimate__container-1__get-label"
   =f.label :任意 ,class:"main_estimate__container-1__get-free-label"
-  
-  = f.fields_for :images do |i|
-    = i.file_field :image,class:"main_estimate__container-1__get-container"
+  .prev-content
+  .label-content
+    = f.label :"images_attributes_0_image",class: "label-box",id: "label-box--#{@estimate.images.length}" do
+      %pre.label-box__text-visible ファイルを選択をクリックしてアップロード
+  .hidden-content
+    = f.fields_for :images do |i|
+      = i.file_field :image, class: "hidden-field", id: "estimate_images_attributes_0_image"
+    - @estimate.images.length.upto(4) do |i|
+      %input{name: "estimate[images_attributes][#{i}][image]", id: "estimate_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
   =f.label :受注確率 ,class:"main_estimate__container-1__get-label"
   =f.label :必須 ,class:"main_estimate__container-1__get-need-label"
   =f.collection_select :probability_id, Probability.all, :id, :name, {prompt: "選択してください"},class:"main_estimate__container-1__get-container"
